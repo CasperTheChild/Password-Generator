@@ -1,0 +1,279 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Manrope:wght@200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root, ::after, ::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /*      Background     */
+
+    --Dark-Grayish-Blue: #24232C;
+    --Very-Dark-Grayish-Purple: #18171F;
+
+    /*      Text Colors     */
+
+    --Light-Grayish-Lavender:#E6E5EA;
+    --Muted-Grayish-Purple: #817D92;
+
+    /*      Strength Colors     */
+
+    --Light-Mint-Green: #A4FFAF;
+    --Vibrant-Red: #F64A4A;
+    --Soft-Orange: #FB7C58;
+    --Soft-Yellow: #F8CD65;
+
+    /*      Font        */
+
+    font-size: 1px;
+    font-family: "JetBrains Mono", monospace;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+    background-color: var(--Very-Dark-Grayish-Purple);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+
+    font-size: 18rem;
+    line-height: 23rem;
+    color: var(--Light-Grayish-Lavender)
+}
+
+.Container {
+    width: 91.5%;
+    max-width: 540rem;
+    margin: clamp(64rem, 17vw, 133rem) auto 0 auto;
+}
+
+.MarginBottom {
+    margin-bottom: 16rem;
+}
+
+.DarkBackground {
+    background-color: var(--Dark-Grayish-Blue);
+}
+
+.MainName {
+    text-align: center;
+}
+
+.GrayFont {
+    color: var(--Muted-Grayish-Purple);
+}
+
+.PasswordContainer {
+    display: flex;
+    padding: clamp(16rem, 4.26vw, 19rem) clamp(16rem, 4.26vw, 32rem);
+}
+
+.PasswordContainer input {
+    width: 100%;
+
+    background-color: var(--Dark-Grayish-Blue);
+    border: 0;
+    outline: 0;
+}
+
+.HeadingL {
+    font-size: 32rem;
+    line-height: 43rem;
+}
+
+.HeadingM {
+    font-size: clamp(18rem, 4.8vw, 24rem);
+    line-height: clamp(23rem, 6.1vw, 31rem);
+}
+
+.Flex {
+    display: flex;
+    gap: 0.5em;     /*      Is it OK?       */
+}
+
+.RightSide {
+    display: flex;
+    align-items: center;
+    gap: 16rem;
+
+    font-size: 18rem;
+}
+
+.CopiedMessage {
+    display: none;
+}
+
+.CopiedMessage.active {
+    display: block;
+}
+
+.RightSide img:hover,
+.RightSide img.active {
+    filter: brightness(1000%);
+}
+
+.Settings {
+    padding: clamp(16rem, 4.26vw, 32rem);
+}
+
+.FlexTwoEnds {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.FlexTwoEnds label {
+    align-self: center;
+}
+
+.LengthInfo {
+    margin-bottom: 8rem;
+}
+
+.PassWordLength {
+    color: var(--Light-Mint-Green);
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    outline: none;
+
+    width: 100%;
+    height: 8rem;
+    margin-bottom: 32rem;
+
+    background: linear-gradient(to right, var(--Light-Mint-Green) 50%, var(--Very-Dark-Grayish-Purple) 50%);
+}
+
+input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none; 
+    appearance: none;
+
+    width: 28rem;
+    height: 28rem;
+    border-radius: 50%;
+
+    background-color: white;
+    cursor: pointer;
+}
+
+input[type='range']::-webkit-slider-thumb:hover {
+    border: 2rem solid var(--Light-Mint-Green);
+    background-color: var(--Dark-Grayish-Blue);
+}
+
+.CheckBoxContainer {
+    display: grid;      /*      Is it ok? I just needed 'gap: 20rem;'       */
+    gap: 20rem;
+
+    margin-bottom: 32rem;
+}
+
+.CheckBox {
+    display: flex;
+}
+
+.ImgBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 20rem;
+    height: 20rem;
+    border: 2rem solid white;
+    margin-inline-end: 25rem;
+}
+
+.ImgBox img {
+    display: none;
+}
+
+.ImgBox img::selection, input::selection {        /*      Do I have to use it?        */
+    background: transparent;
+    color: inherit;
+}
+
+input[type="text"]::-webkit-keygen-select {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.ImgBox img.active {
+    display: block;
+}
+
+.ImgBox.active {
+    border: 0;
+    
+    background-color: #A4FFAF;
+}
+
+.PassWordStrength {
+    padding: clamp(14rem, 3.7vw, 20rem) clamp(16rem, 4vw, 32rem);
+    margin-bottom: clamp(16rem, 4vw, 32rem);
+
+    background-color: var(--Very-Dark-Grayish-Purple);
+}
+
+.GraphBox {
+    width: 10rem;
+    min-height: 28rem;
+
+    border: 2rem solid white;
+}
+
+.red, .orange, .yellow, .green {
+    border: 0;
+}
+
+.red {
+    background-color: var(--Vibrant-Red);
+}
+
+.orange {
+    background-color: var(--Soft-Orange);
+}
+
+.yellow {
+    background-color: var(--Soft-Yellow);
+}
+
+.green {
+    background-color: var(--Light-Mint-Green);
+}
+
+#GenerationButton {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 21rem;
+    border: 0;
+
+    background-color: #A4FFAF;
+}
+
+#GenerationButton.clicked {
+    padding: calc(21rem - 2rem);        /*      I don't really know why does its height change. So I had to write it...     */
+    border: 2rem solid var(--Light-Mint-Green);
+
+    background-color: var(--Very-Dark-Grayish-Purple);
+}
+
+#GenerationButton span {
+    color: var(--Dark-Grayish-Blue);
+
+    margin-inline-end: 24rem;
+}
+
+#GenerationButton span.clicked {
+    color: var(--Light-Mint-Green);
+}
+
+#GenerationButton img.clicked {
+    filter: brightness(200%);       /*      Is it ok? I don't have a copy of this photo in green. There was a method in changing svg file, but it's kinda complicated...       */
+}

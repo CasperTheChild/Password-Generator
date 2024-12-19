@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+  <link rel="stylesheet" href="./style.css">
+  
+  <title>Frontend Mentor | Password generator app</title>
+
+  <script defer src="./main.js"></script>
+</head>
+<body>
+
+<main>
+  <section class="Container ">
+    <h1 class="MainName MarginBottom GrayFont">Password Generator</h1>
+
+    <form class="PasswordContainer DarkBackground MarginBottom">
+      <input type="text" placeholder="P4$5W0rD!" class="HeadingL" id="Password">
+      <div class="RightSide">
+        <p class="CopiedMessage">COPIED</p>
+        <img src="./assets/images/icon-copy.svg" alt="Copy Icon" id="CopyIcon">
+      </div>
+    </form>
+
+    <section class="Settings DarkBackground">
+      <section class="LengthSection">
+        <div class="LengthInfo FlexTwoEnds">
+          <label for="length">Character Length</label>
+          <p class="PassWordLength HeadingL">10</p>
+        </div>
+        <input id="length" name="length" type="range" min="5" max="15" step="1">
+      </section>
+      <section class="CheckBoxContainer">
+        <div class="CheckBox Uppercase">
+          <div class="ImgBox">
+            <img src="./assets/images/icon-check.svg" alt="Check Icon">
+          </div>
+          <p>Include Uppercase Letters</p>
+        </div>
+        <div class="CheckBox Lowercase">
+          <div class="ImgBox"><img src="./assets/images/icon-check.svg" alt="Check Icon"></div>
+          <p>Include Lowercase Letters</p>
+        </div>
+        <div class="CheckBox Numbers">
+          <div class="ImgBox"><img src="./assets/images/icon-check.svg" alt="Check Icon"></div>
+          <p>Include Numbers</p>
+        </div>
+        <div class="CheckBox Symbols">
+          <div class="ImgBox"><img src="./assets/images/icon-check.svg" alt="Check Icon"></div>
+          <p>Include Symbols</p>
+        </div>
+      </section>
+      <section class="PassWordStrength FlexTwoEnds">
+        <p class="GrayFont">STRENGTH</p>
+        <div class="StrengthShow Flex">
+          <h2 class="TooWeak HeadingM StrengthDescriber">TOO WEAK!</h2>
+          <h2 class="Weak HeadingM StrengthDescriber">WEAK</h2>
+          <h2 class="Medium HeadingM StrengthDescriber">MEDIUM</h2>
+          <h2 class="Strong HeadingM StrengthDescriber">STRONG</h2>
+          <div class="StrengthImg Flex">
+            <div class="GraphBox"></div>
+            <div class="GraphBox"></div>
+            <div class="GraphBox"></div>
+            <div class="GraphBox"></div>
+          </div>
+        </div>
+      </section>
+      <button id="GenerationButton">
+        <span>GENERATE</span>
+        <img src="./assets/images/icon-arrow-right.svg" alt="Arrow Icon">
+      </button>
+    </section>
+  </section>
+</main>
+
+</body>
+</html>
