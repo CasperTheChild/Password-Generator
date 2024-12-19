@@ -70,7 +70,7 @@ function CheckBoxRemove(index) {
 }
 
 function UpdateLength() { 
-    PassWordLength = LengthInput.value > 15? 15: LengthInput.value;
+    PassWordLength = LengthInput.value;
     LengthInfo.innerHTML = PassWordLength;
 
     let percentage = 100 * (PassWordLength - 5) / 10;
@@ -81,9 +81,9 @@ function UpdateLength() {
 //  AddEventListener
 
 Password.addEventListener("input", function () {
-    //let PreviousLength = 0;
+    // let PreviousLength = 0;
 
-    if (Password.value.length === 0 || PreviousLength > Password.value.length) { 
+    if (Password.value.length === 0) { 
         for (let i = 0; i < ImgBox.length; i++) { 
             CheckBoxRemove(i);
         }
@@ -111,11 +111,11 @@ Password.addEventListener("input", function () {
 
     let countdownTime = 2;  // 2 seconds
 
-    UpdateLength();         //  It doesn't work anyway. It should change when users enter their own passwords
+    //UpdateLength();           It doesn't work anyway. It should change when users enter their own passwords
     StrengthCalculator();   
 })
 
-document.querySelector('input[type="text"]').addEventListener('contextmenu', function (e) {     /*      Doesn't work        */
+Password.addEventListener('contextmenu', function (e) {
     e.preventDefault();
 });
 
@@ -128,7 +128,7 @@ CopyIcon.addEventListener("click", function () {    // Copy Button
     Password.select();
     Password.setSelectionRange(0, 99999);
 
-    navigator.clipboard.writeText(Password.value);    //  Is catching error necessary?
+    navigator.clipboard.writeText(Password.value); 
 
     //  Timer
 
@@ -145,7 +145,7 @@ CopyIcon.addEventListener("click", function () {    // Copy Button
     }, 1000);
 });
 
-LengthInput.addEventListener("input", UpdateLength())     //  Password Range
+LengthInput.addEventListener("input", UpdateLength);     //  Password Range
 
 CheckBox.forEach((checkbox, index) => {                     // Checkbox
     checkbox.addEventListener("click", function () {
@@ -260,9 +260,7 @@ function StrengthCalculator() {     // Calculates the strength of the password
         else { 
             TooWeak.style.display = "block";
 
-            for (let i = 0; i < GraphBox.length - 3; i++) { 
-                GraphBox[i].classList.add("red");
-            }
+            GraphBox[0].classList.add("red");
         }
     }
 }
